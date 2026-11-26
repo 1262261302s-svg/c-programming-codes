@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void update(int *a, int *b) {
+    int sum = *a + *b;
+    int diff = abs(*a - *b);
+    
+    *a = sum;
+    *b = diff;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    // Read two integers from input
+    scanf("%d %d", &a, &b);
+    
+    // Update values using pointers
+    update(pa, pb);
+    
+    // Print the updated values
+    printf("%d\n%d\n", a, b);
+
+    return 0;
+}
