@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    
+    // Read the two integers a and b
+    if (scanf("%d\n%d", &a, &b) != 2) {
+        return 1;
+    }
+
+    // Array storing English representations for numbers 1 through 9
+    const char *words[] = {
+        "one", "two", "three", "four", "five", 
+        "six", "seven", "eight", "nine"
+    };
+
+    // Loop through every integer n in the interval [a, b]
+    for (int n = a; n <= b; n++) {
+        if (n >= 1 && n <= 9) {
+            printf("%s\n", words[n - 1]);
+        } else if (n > 9) {
+            if (n % 2 == 0) {
+                printf("even\n");
+            } else {
+                printf("odd\n");
+            }
+        }
+    }
+
+    return 0;
+}
